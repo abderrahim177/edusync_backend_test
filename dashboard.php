@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
 <script src="https://cdn.tailwindcss.com"></script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   *{
     padding: 0;
@@ -26,40 +26,51 @@
 <div class="flex">
 
   <!-- Sidebar FIXED -->
-  <aside class="w-64 min-h-screen bg-gray-950 p-6 fixed top-20 left-0">
+ <aside class="w-64 min-h-screen fixed top-20 left-0 bg-gray-950 border-r border-gray-800 p-6">
 
-    <h1 class="text-2xl font-bold mb-10 text-blue-400 flex items-center gap-2">
-      <i class="fa-solid fa-chart-line"></i> Dashboard
+  <!-- SPECIAL DASHBOARD TITLE -->
+  <div class="mb-10 p-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg">
+    <h1 class="text-white text-lg font-bold flex items-center gap-2">
+      <i class="fa-solid fa-gauge-high"></i>
+      Admin Panel
     </h1>
+    <p class="text-xs text-white/80 mt-1">Control your system</p>
+  </div>
 
-    <ul class="space-y-6">
+  <!-- MENU -->
+  <ul class="space-y-2 text-gray-300">
 
-      <li class="hover:text-blue-400 cursor-pointer">
-        <i class="fa-solid fa-house mr-2"></i> Home
-      </li>
+    <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900 hover:text-white transition cursor-pointer">
+      <i class="fa-solid fa-house-chimney text-blue-400 w-5"></i>
+      Home
+    </li>
 
-      <li class="hover:text-blue-400 cursor-pointer">
-        <i class="fa-solid fa-chart-pie mr-2"></i> Analytics
-      </li>
+    <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900 hover:text-white transition cursor-pointer">
+      <i class="fa-solid fa-chart-simple text-green-400 w-5"></i>
+      Analytics
+    </li>
 
-      <li class="hover:text-blue-400 cursor-pointer">
-        <i class="fa-solid fa-users mr-2"></i> Users
-      </li>
+    <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900 hover:text-white transition cursor-pointer">
+      <i class="fa-solid fa-user-group text-yellow-400 w-5"></i>
+      Users
+    </li>
 
-      <li class="hover:text-blue-400 cursor-pointer">
-        <i class="fa-solid fa-gear mr-2"></i> Settings
-      </li>
+    <li class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-900 hover:text-white transition cursor-pointer">
+      <i class="fa-solid fa-gear text-purple-400 w-5"></i>
+      Settings
+    </li>
 
-    </ul>
+  </ul>
 
-    <div class="mt-10">
-      <button class="w-full bg-red-500 hover:bg-red-600 transition p-2 rounded-lg flex items-center gap-2">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Log Out
-      </button>
-    </div>
+  <!-- LOGOUT -->
+  <div class="mt-10 pt-6 border-t border-gray-800">
+    <button class="w-full flex items-center justify-center gap-3 p-3 rounded-lg bg-red-600/10 hover:bg-red-600 text-red-400 hover:text-white transition">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      Logout
+    </button>
+  </div>
 
-  </aside>
+</aside>
 
   <!-- Main Content -->
   <main class="ml-64 flex-1 p-8">
