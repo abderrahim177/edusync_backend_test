@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Header</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-
-
 <!-- header.php -->
-
-<header class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md shadow-lg z-50 border-b border-gray-800">
-  <nav class="max-w-7xl mx-auto flex justify-between items-center p-4">
+<header class="fixed top-0 w-full h-20 bg-gray-900/90 backdrop-blur-md shadow-lg z-50 border-b border-gray-800">
+  <nav class="max-w-7xl mx-auto flex justify-between items-center h-full px-4">
 
     <!-- Logo -->
     <h1 class="text-2xl font-bold text-white flex items-center gap-2">
@@ -43,6 +29,3 @@
 
   </nav>
 </header>
-
-</body>
-</html>

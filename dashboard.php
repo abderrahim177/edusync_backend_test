@@ -1,120 +1,116 @@
-<?php include "./header.php"; 
-// session_start();
-
-// if (!isset($_SESSION['user'])) {
-//     header("Location: login.php");
-//     exit();
-// }
-?>
+<?php include "./header.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
   *{
     padding: 0;
     margin: 0;
-    box-sizing:"border-box"
+    box-sizing: border-box;
   }
 </style>
+
 <title>Dashboard</title>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-white pt-20">
 
-<!-- مهم: باش ما يغطيش header -->
-<div class="pt-20 flex">
+<div class="flex">
 
-<!-- Sidebar -->
-<aside class="w-64 min-h-screen bg-gray-950 p-6">
+  <!-- Sidebar FIXED -->
+  <aside class="w-64 min-h-screen bg-gray-950 p-6 fixed top-20 left-0">
 
-  <h1 class="text-2xl font-bold mb-10 text-blue-400 flex items-center gap-2">
-    <i class="fa-solid fa-chart-line"></i> Dashboard
-  </h1>
-
-  <ul class="space-y-6">
-
-    <li class="hover:text-blue-400 cursor-pointer">
-      <i class="fa-solid fa-house mr-2"></i> Home
-    </li>
-
-    <li class="hover:text-blue-400 cursor-pointer">
-      <i class="fa-solid fa-chart-pie mr-2"></i> Analytics
-    </li>
-
-    <li class="hover:text-blue-400 cursor-pointer">
-      <i class="fa-solid fa-users mr-2"></i> Users
-    </li>
-
-    <li class="hover:text-blue-400 cursor-pointer">
-      <i class="fa-solid fa-gear mr-2"></i> Settings
-    </li>
-
-  </ul>
-
-  <div class="mt-10">
-    <button class="w-full bg-red-500 hover:bg-red-600 transition p-2 rounded-lg flex items-center justify-start gap-2">
-      <i class="fa-solid fa-right-from-bracket"></i>
-      Log Out
-    </button>
-  </div>
-
-</aside>
-
-<!-- Main Content -->
-<main class="flex-1 p-8">
-
-  <div class="max-w-7xl mx-auto">
-
-    <h1 class="text-3xl font-bold mb-8">
-      Trading Dashboard
+    <h1 class="text-2xl font-bold mb-10 text-blue-400 flex items-center gap-2">
+      <i class="fa-solid fa-chart-line"></i> Dashboard
     </h1>
 
-    <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+    <ul class="space-y-6">
 
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-        <h2 class="text-gray-400">Revenue</h2>
-        <p class="text-2xl font-bold text-green-400">$12,450</p>
-      </div>
+      <li class="hover:text-blue-400 cursor-pointer">
+        <i class="fa-solid fa-house mr-2"></i> Home
+      </li>
 
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-        <h2 class="text-gray-400">Users</h2>
-        <p class="text-2xl font-bold text-blue-400">1,245</p>
-      </div>
+      <li class="hover:text-blue-400 cursor-pointer">
+        <i class="fa-solid fa-chart-pie mr-2"></i> Analytics
+      </li>
 
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-        <h2 class="text-gray-400">Orders</h2>
-        <p class="text-2xl font-bold text-yellow-400">532</p>
-      </div>
+      <li class="hover:text-blue-400 cursor-pointer">
+        <i class="fa-solid fa-users mr-2"></i> Users
+      </li>
 
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-        <h2 class="text-gray-400">Profit</h2>
-        <p class="text-2xl font-bold text-purple-400">$4,820</p>
-      </div>
+      <li class="hover:text-blue-400 cursor-pointer">
+        <i class="fa-solid fa-gear mr-2"></i> Settings
+      </li>
 
+    </ul>
+
+    <div class="mt-10">
+      <button class="w-full bg-red-500 hover:bg-red-600 transition p-2 rounded-lg flex items-center gap-2">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Log Out
+      </button>
     </div>
 
-    <!-- Charts -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+  </aside>
 
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-        <canvas id="chart1"></canvas>
+  <!-- Main Content -->
+  <main class="ml-64 flex-1 p-8">
+
+    <div class="max-w-7xl mx-auto">
+
+      <h1 class="text-3xl font-bold mb-8">
+        Trading Dashboard
+      </h1>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 class="text-gray-400">Revenue</h2>
+          <p class="text-2xl font-bold text-green-400">$12,450</p>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 class="text-gray-400">Users</h2>
+          <p class="text-2xl font-bold text-blue-400">1,245</p>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 class="text-gray-400">Orders</h2>
+          <p class="text-2xl font-bold text-yellow-400">532</p>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 class="text-gray-400">Profit</h2>
+          <p class="text-2xl font-bold text-purple-400">$4,820</p>
+        </div>
+
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+      <!-- Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <canvas id="chart1"></canvas>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
         <canvas id="chart2"></canvas>
       </div>
 
+      </div>
+
     </div>
 
-  </div>
-
-</main>
+  </main>
 
 </div>
 
@@ -169,9 +165,7 @@ new Chart(ctx, {
       legend: {
         labels: {
           color: "#fff",
-          font: {
-            size: 14
-          }
+          font: { size: 14 }
         }
       },
 
